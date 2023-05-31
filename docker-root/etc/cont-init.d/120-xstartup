@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv /bin/bash
 mkdir -p /home/user/.vnc/
 cp /usr/local/bin/xstartup.sh /home/user/.vnc/xstartup
-chown user:user /home/user/.vnc/xstartup
+chown user:user -R /home/user/.vnc/
 chmod +x /home/user/.vnc/xstartup
