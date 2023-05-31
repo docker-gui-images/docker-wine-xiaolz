@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv /bin/bash
+cp /usr/local/bin/xstartup.sh /home/user/.vnc/xstartup
+chown user:user /home/user/.vnc/xstartup
+chmod +x /home/user/.vnc/xstartup

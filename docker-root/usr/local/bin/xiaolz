@@ -1,0 +1,6 @@
+#!/bin/bash
+export LC_CTYPE=zh_CN.GBK
+export WINEDEBUG=-all
+
+xiaolz_exe=$(basename "$(find /home/user/xiaolz -maxdepth 1 -type f -name 'Ð¡Àõ×Ó¿ò¼Ü*.exe' | head -n 1)")
+wine "/home/user/xiaolz/$xiaolz_exe" $@

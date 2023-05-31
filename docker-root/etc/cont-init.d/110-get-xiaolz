@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv /bin/bash
+hasexe=$(find /home/user/xiaolz -maxdepth 1 -type f -name 'Ð¡Àõ×Ó¿ò¼Ü*.exe')
+if [ "$hasexe" != "" ] ; then
+	echo 'xiaolz already exists, skip download.'
+else
+	echo 'Downloading xiaolz ...'
+	mkdir /tmp/xiaolz
+	wget $XIAOLZ_URL -O /tmp/xiaolz/xiaolz.zip
+	echo 'Unzipping xiaolz ...'
+	cd /tmp/xiaolz
+	LC_ALL=zh_CN.GBK unzip xiaolz.zip > /dev/null
+	mv * /home/user/xiaolz
+	chown -R user:user /home/user/xiaolz
+	rm -rf /tmp/xiaolz
+fi
