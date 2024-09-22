@@ -1,4 +1,4 @@
-FROM flyqie/docker-novnc:latest
+FROM dockerguiimages/docker-novnc:latest
 
 COPY ./docker-root /
 

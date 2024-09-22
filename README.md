@@ -15,9 +15,9 @@ docker-wine-xiaolz 可以使你通过 Wine 在 Docker 容器中运行 小栗子�
 如果你在服务器上使用 `docker` 或者和 docker 兼容的服务，只需执行：
 
 ```bash
-docker pull flyqie/docker-wine-xiaolz
+docker pull dockerguiimages/docker-wine-xiaolz
 mkdir xiaolz && cd xiaolz
-docker run --rm -p 9000:9000 -v `pwd`:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" flyqie/docker-wine-xiaolz
+docker run --rm -p 9000:9000 -v `pwd`:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" dockerguiimages/docker-wine-xiaolz
 ```
 
 即可运行一个 docker-wine-xiaolz 实例。运行后，访问 `http://你的IP:9000` 可以打开 noVNC 页面，输入 `MAX8char` 作为密码后即可看到 小栗子框架公益版 已经启动。
@@ -31,19 +31,19 @@ docker run --rm -p 9000:9000 -v `pwd`:/home/user/xiaolz -e VNC_GEOMETRY="1280x72
 ```bash
 # 请先自行删除老的 xiaolz 目录
 mkdir xiaolz
-docker run --name=xiaolz -d -p 9000:9000 -v `pwd`/xiaolz:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" -e XIAOLZ_URL="其他版本直链下载地址" flyqie/docker-wine-xiaolz
+docker run --name=xiaolz -d -p 9000:9000 -v `pwd`/xiaolz:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" -e XIAOLZ_URL="其他版本直链下载地址" dockerguiimages/docker-wine-xiaolz
 ```
 
 ### 使用 HTTP Basic Authentication 进行鉴权 (推荐)
 
 ```bash
-docker run --name=xiaolz -d -p 9000:9000 -v `pwd`/xiaolz:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" -e VNC_PASSWD="" -e HTTP_AUTH_USER="auth_username" -e HTTP_AUTH_PASSWD="auth_password" flyqie/docker-wine-xiaolz
+docker run --name=xiaolz -d -p 9000:9000 -v `pwd`/xiaolz:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" -e VNC_PASSWD="" -e HTTP_AUTH_USER="auth_username" -e HTTP_AUTH_PASSWD="auth_password" dockerguiimages/docker-wine-xiaolz
 ```
 
 ### 使用 VNC 进行鉴权 (不推荐)
 
 ```bash
-docker run --name=xiaolz -d -p 9000:9000 -v `pwd`/xiaolz:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" -e VNC_PASSWD="12345678" flyqie/docker-wine-xiaolz
+docker run --name=xiaolz -d -p 9000:9000 -v `pwd`/xiaolz:/home/user/xiaolz -e VNC_GEOMETRY="1280x720" -e VNC_PASSWD="12345678" dockerguiimages/docker-wine-xiaolz
 ```
 
 ## 环境变量
